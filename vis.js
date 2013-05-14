@@ -9,7 +9,7 @@ var rescale = h/numRects;
 var dataset = [];
 for (var i=0;i<numRects;i++){dataset.push(i);}
 
-var svg = d3.select("#vertical_vis").append("svg")
+var vertical_svg = d3.select("#vertical_vis").append("svg")
     .attr("width", w)
     .attr("height", h)
     .style("pointer-events", "all")
@@ -18,7 +18,7 @@ var svg = d3.select("#vertical_vis").append("svg")
     .on("mousedown", onNotes);
 
 
-svg.selectAll("line")
+vertical_svg.selectAll("line")
     .data(dataset)
     .enter()
     .append("line")
@@ -37,10 +37,10 @@ function animate(){
     var m = d3.mouse(this)
     var base = Math.abs(m[0]-w/2);
     var mx = (m[0]<w/2) ? m[0] : w-m[0];
-    svg.selectAll("line")
+    vertical_svg.selectAll("line")
         .remove()
 
-    svg.selectAll("line")
+    vertical_svg.selectAll("line")
     .data(dataset)
     .enter()
     .append("line")
