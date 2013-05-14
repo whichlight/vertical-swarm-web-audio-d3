@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+
+        <div id="unmute">turn audio on</div>
+        <div id="vis">
+        </div>
+    </body>
+
+
+        <script type="text/javascript"
+            src="http://mbostock.github.com/d3/d3.js?1.25.0">
+        </script>
+
+    <script type="text/javascript">
+
+    var context;
+    var mute = true;
+    document.getElementById("unmute").style.height=30+"px";
+    document.getElementById("unmute").style.width=100+"px";
+    document.getElementById("unmute").style.background="#BDBDBD";
+
+    document.getElementById("unmute").onclick =function(){
+          if (mute==true){
+            mute=false;
+            setupWebAudio();
+            openNotes(10);
+            document.getElementById("unmute").innerHTML="turn audio off";
+          }
+          else{
+            mute =true;
+            closeNotes();
+            document.getElementById("unmute").innerHTML="turn audio on";
+          }
+        };
+
+function setupWebAudio(){
+  try{
+    context= new webkitAudioContext();
+  }
+  catch(err){
+    alert("this uses the web audio API, try opening it in google chrome \n\n <3 whichlight" );
+  }
+}
+
+window.onload = function(){
+
+
+}
+    </script>
+
+ <script type="text/javascript" src="synth.js"></script>
+    <script type="text/javascript" src="vis.js"></script>
+
+</html>
