@@ -40,10 +40,10 @@ function offNotes(){
 
 function setupSynth(){
     var nodes={};
-    nodes.source = context.createOscillator();
+    nodes.source = vertical_context.createOscillator();
     nodes.source.type=2;
-    nodes.filter = context.createBiquadFilter();
-    nodes.volume = context.createGainNode();
+    nodes.filter = vertical_context.createBiquadFilter();
+    nodes.volume = vertical_context.createGainNode();
     nodes.filter.type=0; //0 is a low pass filter
 
     nodes.volume.gain.value = gainVal;
@@ -51,6 +51,6 @@ function setupSynth(){
     nodes.filter.connect(nodes.volume);
     //frequency val
     nodes.filter.frequency.value=2000;
-    nodes.volume.connect(context.destination);
+    nodes.volume.connect(vertical_context.destination);
     return nodes;
 }

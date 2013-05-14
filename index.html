@@ -16,10 +16,10 @@
 
     <script type="text/javascript">
 
-    var context;
+    var vertical_context;
     var mute = true;
     document.getElementById("vertical_unmute").style.height=30+"px";
-    document.getElementById("vertical_unmute").style.width=100+"px";
+    document.getElementById("vertical_unmute").style.width=200+"px";
     document.getElementById("vertical_unmute").style.background="#BDBDBD";
 
     document.getElementById("vertical_unmute").onclick =function(){
@@ -38,7 +38,7 @@
 
 function setupWebAudio(){
   try{
-    context= new webkitAudioContext();
+    vertical_context= new webkitAudioContext();
   }
   catch(err){
     alert("this uses the web audio API, try opening it in google chrome \n\n <3 whichlight" );
