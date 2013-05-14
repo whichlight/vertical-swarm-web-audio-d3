@@ -4,7 +4,7 @@
     </head>
     <body>
 
-        <div id="unmute">turn audio on</div>
+        <div id="vertical_unmute">turn audio on</div>
         <div id="vertical_vis">
         </div>
     </body>
@@ -18,21 +18,21 @@
 
     var context;
     var mute = true;
-    document.getElementById("unmute").style.height=30+"px";
-    document.getElementById("unmute").style.width=100+"px";
-    document.getElementById("unmute").style.background="#BDBDBD";
+    document.getElementById("vertical_unmute").style.height=30+"px";
+    document.getElementById("vertical_unmute").style.width=100+"px";
+    document.getElementById("vertical_unmute").style.background="#BDBDBD";
 
-    document.getElementById("unmute").onclick =function(){
+    document.getElementById("vertical_unmute").onclick =function(){
           if (mute==true){
             mute=false;
             setupWebAudio();
             openNotes(10);
-            document.getElementById("unmute").innerHTML="turn audio off";
+            document.getElementById("vertical_unmute").innerHTML="turn audio off";
           }
           else{
             mute =true;
             closeNotes();
-            document.getElementById("unmute").innerHTML="turn audio on";
+            document.getElementById("vertical_unmute").innerHTML="turn audio on";
           }
         };
 
