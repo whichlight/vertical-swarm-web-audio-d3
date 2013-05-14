@@ -9,7 +9,7 @@ var rescale = h/numRects;
 var dataset = [];
 for (var i=0;i<numRects;i++){dataset.push(i);}
 
-var svg = d3.select("#vis").append("svg")
+var svg = d3.select("#vertical_vis").append("svg")
     .attr("width", w)
     .attr("height", h)
     .style("pointer-events", "all")

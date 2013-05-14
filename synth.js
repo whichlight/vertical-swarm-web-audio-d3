@@ -38,8 +38,6 @@ function offNotes(){
     }
 }
 
-
-
 function setupSynth(){
     var nodes={};
     nodes.source = context.createOscillator();
@@ -56,7 +54,3 @@ function setupSynth(){
     nodes.volume.connect(context.destination);
     return nodes;
 }
-
-
-
-
